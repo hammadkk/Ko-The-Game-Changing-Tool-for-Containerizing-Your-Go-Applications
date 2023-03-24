@@ -20,11 +20,11 @@ We can define which files to include in the container image and how to build it 
 ![features](https://user-images.githubusercontent.com/85316531/227512023-94df8aa2-102d-4f7f-9f98-af5b1f538447.png)
 
 
-Simplified building and packaging: KO streamlines the process of building and packaging Go applications by providing a single command for building and packaging your application as a container image.
-Multi-stage builds: KO supports multi-stage builds, which allows you to optimize the size of your application’s container image by only including the dependencies and runtime components that are necessary.
-Integration with Kubernetes: KO integrates smoothly with Kubernetes, allowing you to deploy your application to a Kubernetes cluster with minimal effort.
-Automatic tag management: To make it simple to monitor changes and rollbacks, KO automatically creates and manages image tags based on the state of your repository.
-Customizable configuration: KO provides a flexible configuration system that allows you to customize the build and packaging process to suit your specific needs.
+1) Simplified building and packaging: KO streamlines the process of building and packaging Go applications by providing a single command for building and packaging your application as a container image.
+2) Multi-stage builds: KO supports multi-stage builds, which allows you to optimize the size of your application’s container image by only including the dependencies and runtime components that are necessary.
+3) Integration with Kubernetes: KO integrates smoothly with Kubernetes, allowing you to deploy your application to a Kubernetes cluster with minimal effort.
+4) Automatic tag management: To make it simple to monitor changes and rollbacks, KO automatically creates and manages image tags based on the state of your repository.
+5) Customizable configuration: KO provides a flexible configuration system that allows you to customize the build and packaging process to suit your specific needs.
 Installing KO
 Install the Go programming language: If you haven't already, you must install Go on your machine. You can download the latest version of Go from the official website: https://golang.org/dl/
 Install the KO binary: Once you have Go installed, you can install the KO binary by running the following command in your terminal:
