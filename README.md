@@ -25,9 +25,10 @@ We can define which files to include in the container image and how to build it 
 3) Integration with Kubernetes: KO integrates smoothly with Kubernetes, allowing you to deploy your application to a Kubernetes cluster with minimal effort.
 4) Automatic tag management: To make it simple to monitor changes and rollbacks, KO automatically creates and manages image tags based on the state of your repository.
 5) Customizable configuration: KO provides a flexible configuration system that allows you to customize the build and packaging process to suit your specific needs.
-Installing KO
-Install the Go programming language: If you haven't already, you must install Go on your machine. You can download the latest version of Go from the official website: https://golang.org/dl/
-Install the KO binary: Once you have Go installed, you can install the KO binary by running the following command in your terminal:
+
+# Installing KO
+1) Install the Go programming language: If you haven't already, you must install Go on your machine. You can download the latest version of Go from the official website: https://golang.org/dl/
+2) Install the KO binary: Once you have Go installed, you can install the KO binary by running the following command in your terminal:
 go install github.com/google/ko@latest
 
 ![Screenshot (380)](https://user-images.githubusercontent.com/85316531/227512087-4acb418e-36ab-449e-bf35-bd8e361bf2dd.png)
@@ -37,7 +38,7 @@ This will download and install the latest version of KO on your machine.
 
 # Building and Deploying GO application using KO
 So I made a simple go app main.gothat runs on port 8080 and displays: ”Hello, World!”
-
+```
 package main
 
 import (
@@ -53,10 +54,11 @@ func main() {
 
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
+```
 The above can be run by the command go run main.go
 
 Now create a ko.yamlfile which is a configuration file used by the ko tool to specify the build context and other settings for building and deploying container images.
-
+```
 apiVersion: ko.dev/v1alpha1
 kind: Build
 metadata:
@@ -82,6 +84,7 @@ spec:
       ports:
         - name: http
           containerPort: 8080
+  ```
           
 apiVersion and kind determine the type of resource you are defining, which is an Build object in this case.
 metadata specifies the name of the Build object.
@@ -110,8 +113,8 @@ After setting it the image should be built and pushed to the specified registry.
 
 To run this image locally, docker will be required.
 
-Sign in to docker on the terminal using your credentials by the command docker login
-Pull and run the image docker run -p 8080:8080 (Image Name) hammadkhann/go-3cd74a907fde4943305bdd8658203c0c
+1) Sign in to docker on the terminal using your credentials by the command docker login
+2) Pull and run the image docker run -p 8080:8080 (Image Name) hammadkhann/go-3cd74a907fde4943305bdd8658203c0c
 ![2](https://user-images.githubusercontent.com/85316531/227512427-d601e579-7de0-4319-89e2-bfa51a161612.png)
 
 ![3](https://user-images.githubusercontent.com/85316531/227512502-19bf7290-36a6-4681-a6c6-420b5c5fe6c6.png)
