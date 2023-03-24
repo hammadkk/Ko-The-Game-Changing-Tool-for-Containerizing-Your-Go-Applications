@@ -1,5 +1,8 @@
 # Ko-The-Game-Changing-Tool-for-Containerizing-Your-Go-Applications
 
+![KO](https://user-images.githubusercontent.com/85316531/227511913-1cd32e3f-b9bb-4e62-9d06-d7500a4741ed.png)
+
+
 
 Containerization has revolutionized the software development industry, enabling faster deployment, improved scalability, and increased portability. However, developers faced challenges building and deploying container images for their Go applications. They would have to manually manage the complexities of containerization, including writing complex Dockerfiles, managing container images, Kubernetes clusters, and integrating with container image registries which were effort and time-consuming and really impacted the deployment, quality, and reliability of the container images.
 
@@ -14,6 +17,9 @@ We can define which files to include in the container image and how to build it 
 
 # Some Features of KO
 
+![features](https://user-images.githubusercontent.com/85316531/227512023-94df8aa2-102d-4f7f-9f98-af5b1f538447.png)
+
+
 Simplified building and packaging: KO streamlines the process of building and packaging Go applications by providing a single command for building and packaging your application as a container image.
 Multi-stage builds: KO supports multi-stage builds, which allows you to optimize the size of your application’s container image by only including the dependencies and runtime components that are necessary.
 Integration with Kubernetes: KO integrates smoothly with Kubernetes, allowing you to deploy your application to a Kubernetes cluster with minimal effort.
@@ -23,6 +29,9 @@ Installing KO
 Install the Go programming language: If you haven't already, you must install Go on your machine. You can download the latest version of Go from the official website: https://golang.org/dl/
 Install the KO binary: Once you have Go installed, you can install the KO binary by running the following command in your terminal:
 go install github.com/google/ko@latest
+
+![Screenshot (380)](https://user-images.githubusercontent.com/85316531/227512087-4acb418e-36ab-449e-bf35-bd8e361bf2dd.png)
+
 
 This will download and install the latest version of KO on your machine.
 
@@ -96,19 +105,23 @@ KO needs to know the Docker registry where the image that is built should be pus
 $env:KO_DOCKER_REPO={registry}/{username}
 After setting it the image should be built and pushed to the specified registry.
 
+![1](https://user-images.githubusercontent.com/85316531/227512248-8ce783bd-24a8-4f34-a78e-fbb64881bc53.png)
 
-Pushed to the registry
+
 To run this image locally, docker will be required.
 
 Sign in to docker on the terminal using your credentials by the command docker login
 Pull and run the image docker run -p 8080:8080 (Image Name) hammadkhann/go-3cd74a907fde4943305bdd8658203c0c
+![2](https://user-images.githubusercontent.com/85316531/227512427-d601e579-7de0-4319-89e2-bfa51a161612.png)
 
-Docker Image running
+![3](https://user-images.githubusercontent.com/85316531/227512502-19bf7290-36a6-4681-a6c6-420b5c5fe6c6.png)
 
-Output
 We can see that it’s working fine.
 
 KO and SBOMs: A Powerful Combination
+
+![4](https://user-images.githubusercontent.com/85316531/227512570-d45a1b1b-3390-4b8f-975f-03a69f4e654b.png)
+
 
 SBOMs stands for Software Bill of Materials, a list of all the third-party software components and dependencies used in a given software project.
 
@@ -128,8 +141,9 @@ Once you have generated an SBOM, you can include it as part of your deployment a
 
 If you are interested in viewing a demonstration of how Ko integrates with Kubernetes, you can watch a live stream that was conducted by CloudNativePodcast.
 
+https://www.youtube.com/watch?v=o5eWy-2SDtc
 
-Build and deploy Go applications on K8s with “KO”
+
 Conclusion
 In conclusion, Ko has become a valuable tool for developers who work with containerized Go applications. Ko eliminates the need for installing Docker on your environment and creating Dockerfile by yourself and simplifies the deployment and containerization process by providing a streamlined workflow for creating, testing, and deploying container images. Ko integrates smoothly with Kubernetes, allowing developers to deploy their applications to Kubernetes clusters with minimal effort.
 
