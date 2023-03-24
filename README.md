@@ -55,7 +55,7 @@ func main() {
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
-The above can be run by the command go run main.go
+The above can be run by the command ```go run main.go```
 
 Now create a ko.yamlfile which is a configuration file used by the ko tool to specify the build context and other settings for building and deploying container images.
 ```
@@ -86,6 +86,7 @@ spec:
           containerPort: 8080
   ```
           
+```
 apiVersion and kind determine the type of resource you are defining, which is an Build object in this case.
 metadata specifies the name of the Build object.
 spec contains the details of the build process, including the base image, the source code to import, the output image name, and the build steps.
@@ -99,13 +100,15 @@ image specifies the image to use for the build step.
 ports specifies the ports to expose in the deployment.
 containerPort specifies the port that the container will listen on.
 To Build the application type the following command
+```
 
 ko build .
-It is most likely you will get this error while building i.eKO_DOCKER_REPO environment variable is unset which specifies where the images built using ko should be pushed.
+It is most likely you will get this error while building i.e ```KO_DOCKER_REPO environment variable is unset``` which specifies where the images built using ko should be pushed.
 
 KO needs to know the Docker registry where the image that is built should be pushed. By setting KO_DOCKER_REPO to "username", you are telling ko to push the image to Docker Hub under your account (your-username).
 
-$env:KO_DOCKER_REPO={registry}/{username}
+```$env:KO_DOCKER_REPO={registry}/{username}```
+
 After setting it the image should be built and pushed to the specified registry.
 
 ![1](https://user-images.githubusercontent.com/85316531/227512248-8ce783bd-24a8-4f34-a78e-fbb64881bc53.png)
@@ -115,13 +118,14 @@ To run this image locally, docker will be required.
 
 1) Sign in to docker on the terminal using your credentials by the command docker login
 2) Pull and run the image docker run -p 8080:8080 (Image Name) hammadkhann/go-3cd74a907fde4943305bdd8658203c0c
+
 ![2](https://user-images.githubusercontent.com/85316531/227512427-d601e579-7de0-4319-89e2-bfa51a161612.png)
 
 ![3](https://user-images.githubusercontent.com/85316531/227512502-19bf7290-36a6-4681-a6c6-420b5c5fe6c6.png)
 
 We can see that it’s working fine.
 
-KO and SBOMs: A Powerful Combination
+# KO and SBOMs: A Powerful Combination
 
 ![4](https://user-images.githubusercontent.com/85316531/227512570-d45a1b1b-3390-4b8f-975f-03a69f4e654b.png)
 
@@ -132,13 +136,13 @@ Using an SBOM can help you to track and manage the software components that your
 
 To produce an SPDX or CycloneDX formatted Software Bill of Materials (SBOM) using Ko, we need to install and use Cosign. To build images and generate an SBOM by default, we can run the following command:
 
-cosign download sbom $(ko build./cmd/app)
+```cosign download sbom $(ko build./cmd/app)```
 
 This command will build the image for the ./cmd/app directory using Ko and generate an SBOM in the desired format using Cosign.
 
-By default, KO produces an SBOM in SPDX format. However, it is also possible to opt for the CycloneDX format instead by — sbom=cyclonedxflag command.
+By default, KO produces an SBOM in SPDX format. However, it is also possible to opt for the CycloneDX format instead by ```— sbom=cyclonedxflag command```
 
-To disable SBOM generation, pass --sbom=none.
+To disable SBOM generation, pass ```--sbom=none```
 
 Once you have generated an SBOM, you can include it as part of your deployment artifacts and share it with stakeholders who need to understand the software components that your application relies on.
 
@@ -147,7 +151,7 @@ If you are interested in viewing a demonstration of how Ko integrates with Kuber
 https://www.youtube.com/watch?v=o5eWy-2SDtc
 
 
-Conclusion
+# Conclusion
 In conclusion, Ko has become a valuable tool for developers who work with containerized Go applications. Ko eliminates the need for installing Docker on your environment and creating Dockerfile by yourself and simplifies the deployment and containerization process by providing a streamlined workflow for creating, testing, and deploying container images. Ko integrates smoothly with Kubernetes, allowing developers to deploy their applications to Kubernetes clusters with minimal effort.
 
 Additionally, Ko supports multi-stage builds, automatically manages image tags, and provides a flexible configuration system that allows customization of the build and packaging process to suit specific needs. With Ko, developers can save a lot of time and effort while ensuring the quality and reliability of their container images.
