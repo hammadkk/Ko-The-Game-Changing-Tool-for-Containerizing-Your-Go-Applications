@@ -117,7 +117,7 @@ After setting it the image should be built and pushed to the specified registry.
 To run this image locally, docker will be required.
 
 1) Sign in to docker on the terminal using your credentials by the command docker login
-2) Pull and run the image docker run -p 8080:8080 (Image Name) hammadkhann/go-3cd74a907fde4943305bdd8658203c0c
+2) Pull and run the image ```docker run -p 8080:8080 (Image Name) hammadkhann/go-3cd74a907fde4943305bdd8658203c0c```
 
 ![2](https://user-images.githubusercontent.com/85316531/227512427-d601e579-7de0-4319-89e2-bfa51a161612.png)
 
