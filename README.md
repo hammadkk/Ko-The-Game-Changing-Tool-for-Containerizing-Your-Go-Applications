@@ -138,7 +138,7 @@ To produce an SPDX or CycloneDX formatted Software Bill of Materials (SBOM) usin
 
 ```cosign download sbom $(ko build./cmd/app)```
 
-This command will build the image for the ./cmd/app directory using Ko and generate an SBOM in the desired format using Cosign.
+This command will build the image for the ``` ./cmd/app ``` directory using Ko and generate an SBOM in the desired format using Cosign.
 
 By default, KO produces an SBOM in SPDX format. However, it is also possible to opt for the CycloneDX format instead by ```— sbom=cyclonedxflag command```
 
