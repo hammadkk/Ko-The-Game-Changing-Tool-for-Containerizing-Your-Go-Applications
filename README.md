@@ -55,7 +55,7 @@ func main() {
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
-The above can be run by the command ```go run main.go```
+The above can be run by the command ```go run main.go```.
 
 Now create a ko.yamlfile which is a configuration file used by the ko tool to specify the build context and other settings for building and deploying container images.
 ```
