@@ -20,7 +20,7 @@ We can define which files to include in the container image and how to build it 
 ![features](https://user-images.githubusercontent.com/85316531/227512023-94df8aa2-102d-4f7f-9f98-af5b1f538447.png)
 
 
-1) Simplified building and packaging: KO streamlines the process of building and packaging Go applications by providing a single command for building and packaging your application as a container image.
+1) Simplified building and packaging:  KO streamlines the process of building and packaging Go applications by providing a single command for building and packaging your application as a container image.
 2) Multi-stage builds: KO supports multi-stage builds, which allows you to optimize the size of your application’s container image by only including the dependencies and runtime components that are necessary.
 3) Integration with Kubernetes: KO integrates smoothly with Kubernetes, allowing you to deploy your application to a Kubernetes cluster with minimal effort.
 4) Automatic tag management: To make it simple to monitor changes and rollbacks, KO automatically creates and manages image tags based on the state of your repository.
